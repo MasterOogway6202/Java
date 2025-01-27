@@ -13,7 +13,7 @@ myImage.onclick = function() {
 
 // Personalized welcome message code
 
-let myButton = document.querySelector('button');
+let myButton = document.querySelector('#welcome');
 let myHeading = document.querySelector('h1');
 
 function setUserName() {
@@ -36,3 +36,13 @@ if(!localStorage.getItem('name')) {
 myButton.onclick = function() {
   setUserName();
 }
+
+const button = document.querySelector("#update");
+
+button.addEventListener("click", updateName);
+
+function updateName() {
+  const name = prompt("Enter a new name");
+  button.textContent = `Player 1: ${name}`;
+}
+
